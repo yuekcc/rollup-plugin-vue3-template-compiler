@@ -1,0 +1,32 @@
+{
+  "name": "rollup-plugin-vue3-template-compiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "index.mjs",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuekcc/rollup-plugin-vue3-template-compiler.git"
+  },
+  "keywords": [
+    "rollup",
+    "vue3",
+    "template",
+    "compiler"
+  ],
+  "author": "yuekcc",
+  "homepage": "https://github.com/yuekcc/rollup-plugin-vue3-template-compiler",
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/pluginutils": "^4.0.0",
+    "@vue/compiler-dom": "^3.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "buble": "^0.20.0",
+    "rollup": "^2.28.2"
+  }
+}
