@@ -1,6 +1,8 @@
 # rollup-plugin-vue3-template-compiler
 
-a rollup for compiler vue3 template into render function.
+a rollup plugin for compiling vue3 template into render function. 
+
+**only work on browser(DOM) with vue 3.0**, not support ssr.
 
 ## install 
 
@@ -21,7 +23,9 @@ export default {
     file: "dist/bundle.js"
   },
   plugins: [
-    vueTemplateCompiler({include: "src/**/*.template.html"}),
+    // add this plugin
+    // include option is require.
+    vueTemplateCompiler({include: "src/**/*.template.html"}), 
     buble()
   ]
 }
@@ -30,14 +34,12 @@ export default {
 
 ## usage
 
-```js
-import render from "./tips.template.html";
-```
-
-The `render` will the vue3 render function. You can use in a normal js file:
+### vue3 component source file
 
 ```js
 import { defineComponent } from "vue";
+
+// import the template file. rollup will parse it with this plugin.
 import render from "./tips.template.html";
 
 export const Tips = defineComponent({
@@ -49,3 +51,15 @@ export const Tips = defineComponent({
   render, // the render function transform from 'tips.template.html'
 });
 ```
+
+### template file
+
+```html
+<div>{{tips}}</div>
+```
+
+## note
+
+special thank you: [fergaldoyle/rollup-plugin-vue-template-compiler][fergaldoyle]
+
+[fergaldoyle]: https://github.com/fergaldoyle/rollup-plugin-vue-template-compiler
